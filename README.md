@@ -1,2 +1,5 @@
 # robotfr
-Dockerize Robot framework 
+Dockerize Robot framework
+
+### TODO : 
+- Fix issue with firefox 
