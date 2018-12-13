@@ -5,6 +5,7 @@ Dockerize Robot framework
 Create repository in your workspace, & put your test (`*.robot`) on `/tests` (you can pick this example : [chrome.robot](https://github.com/ykaaouachi/robotfr/tree/master/tests)).
 
 ```
+$ docker pull ykaaouachi/robotfr
 $ docker run -it --rm \
               --name rfr2 \
               -v $(pwd)/tests:/tests:ro \
