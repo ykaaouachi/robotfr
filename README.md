@@ -1,8 +1,9 @@
 ## robotfr
-Dockerize Robot framework
+Dockerize Robot framework (lightweight `~200 MB`)
 
 ### How to use
-Create repository in your workspace, & put your test (`*.robot`) on `/tests` (you can pick this example : [chrome.robot](https://github.com/ykaaouachi/robotfr/tree/master/tests)).
+Create repository in your workspace, & put your test (`*.robot`) on `/tests`.
+You can pick this example : [chrome.robot](https://github.com/ykaaouachi/robotfr/blob/master/tests/chrome.robot)).
 
 ```
 $ # Get docker images
@@ -22,31 +23,10 @@ $ # Run your container ;)
 $ docker run -it --rm \
              --name test-with-robot \
              -v $(pwd)/tests:/tests:ro \
-             -v $(pwd)/out:/out:rw 
+             -v $(pwd)/out:/out:rw \
              ykaaouachi/robotfr 
 
 / # pybot --outputdir /out /tests
-==============================================================================
-Tests
-==============================================================================
-Tests.Chrome :: A basic test to check google page with chrome
-==============================================================================
-User can open page :: As a user I can open the google page            | PASS |
-------------------------------------------------------------------------------
-User fill in the Search text box :: The user search 'Test with robot' | PASS |
-------------------------------------------------------------------------------
-Tests.Chrome :: A basic test to check google page with chrome         | PASS |
-2 critical tests, 2 passed, 0 failed
-2 tests total, 2 passed, 0 failed
-==============================================================================
-Tests                                                                 | PASS |
-2 critical tests, 2 passed, 0 failed
-2 tests total, 2 passed, 0 failed
-==============================================================================
-Output:  /out/output.xml
-Log:     /out/log.html
-Report:  /out/report.html
-/ #              
 ```
 
 To run your tests without enter container, replace this line in `entry_point.sh` : 
@@ -63,10 +43,10 @@ When running container, add `--output /out /tests`, then :
 $ docker run -it --rm \
              --name test-with-robot \
              -v $(pwd)/tests:/tests:ro \
-             -v $(pwd)/out:/out:rw
-             ykaaouachi/robotfr
+             -v $(pwd)/out:/out:rw \
+             ykaaouachi/robotfr \
              --output /out /tests
 ```
 
 ### TODO : 
-- Fix issue with firefox 
+- Fix issue with firefox
