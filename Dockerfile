@@ -3,6 +3,8 @@ FROM python:2.7-alpine3.8
 LABEL Maintainer="Youssef K<ykaaouachi@gmail.com>" Version="1.0"
 
 RUN apk add --no-cache \
+    # git to clone tests from another repository if needed
+    git \
     # for Chrome
     udev \
     chromium \
