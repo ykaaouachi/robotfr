@@ -29,6 +29,10 @@ $ docker run -it --rm \
 / # pybot --outputdir /out /tests
 ```
 
+![alt text](https://github.com/ykaaouachi/robotfr/blob/master/images/out-put.png)
+
+### N.B.
+
 To run your tests without enter container, replace this line in `entry_point.sh` : 
 ```
 /bin/sh
